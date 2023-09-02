@@ -5,3 +5,7 @@ setup:
 .PHONY: fmt
 fmt: setup
 	julia -e 'using JuliaFormatter; format(".")'
+
+.PHONY: test
+test:
+	julia -e 'using Pkg; Pkg.activate("."); Pkg.test("NPS")'
