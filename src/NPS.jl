@@ -1,5 +1,5 @@
 module NPS
 
-greet() = print("Hello World!")
+greet() = "Hello World!"
 
 end # module NPS
