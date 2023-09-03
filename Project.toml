@@ -2,3 +2,9 @@ name = "NPS"
 uuid = "84d37b2b-9fed-4c25-9b89-de30dae39924"
 authors = ["dr666m1 <skndr666m1@gmail.com>"]
 version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
