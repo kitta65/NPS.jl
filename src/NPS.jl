@@ -18,16 +18,19 @@ function nps(x::Integer)::Category
 end
 
 function nps(arr::AbstractArray{T})::Float64 where {T<:Integer}
+    categories = map(nps, arr)
+    return nps(categories)
+end
+
+function nps(arr::AbstractArray{Category})::Float64
     n_promoter = 0
     n_passive = 0
     n_detractor = 0
 
     for x in arr
-        category = nps(x)
-
-        if category == promoter
+        if x == promoter
             n_promoter += 1
-        elseif category == passive
+        elseif x == passive
             n_passive += 1
         else
             n_detractor += 1

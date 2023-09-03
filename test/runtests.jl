@@ -2,7 +2,7 @@ using NPS
 using Test
 
 @testset "all" begin
-    @testset "integer" begin
+    @testset "Integer" begin
         @test nps(0) == NPS.detractor
         @test nps(6) == NPS.detractor
         @test nps(7) == NPS.passive
@@ -12,8 +12,12 @@ using Test
         @test_throws DomainError nps(-1)
     end
 
-    @testset "array" begin
+    @testset "AbstractArray{Integer}" begin
         @test nps([0, 9]) == 0.0
         @test nps([7, 8, 9]) == 1 / 3 * 100
+    end
+
+    @testset "AbstractArray{Category}" begin
+        @test nps([NPS.detractor, NPS.promoter]) == 0.0
     end
 end
