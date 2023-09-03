@@ -2,9 +2,15 @@ module NPS
 
 export nps
 
-@enum Category promoter passive detractor
+"Represents NPS category"
+@enum NPSCategory promoter passive detractor
 
-function nps(x::Integer)::Category
+"""
+    nps(x::Integer) -> NPSCategory
+
+Return NPS category
+"""
+function nps(x::Integer)::NPSCategory
     if 0 <= x <= 6
         return detractor
     elseif 7 <= x <= 8
@@ -17,12 +23,22 @@ function nps(x::Integer)::Category
     return throw(err)
 end
 
+"""
+    nps(arr::AbstractArray{Integer}) -> Float64
+
+Calculate NPS score
+"""
 function nps(arr::AbstractArray{T})::Float64 where {T<:Integer}
     categories = map(nps, arr)
     return nps(categories)
 end
 
-function nps(arr::AbstractArray{Category})::Float64
+"""
+    nps(arr::AbstractArray{NPSCategory}) -> Float64
+
+Calculate NPS score
+"""
+function nps(arr::AbstractArray{NPSCategory})::Float64
     n_promoter = 0
     n_passive = 0
     n_detractor = 0

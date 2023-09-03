@@ -17,7 +17,7 @@ using Test
         @test nps([7, 8, 9]) == 1 / 3 * 100
     end
 
-    @testset "AbstractArray{Category}" begin
+    @testset "AbstractArray{NPSCategory}" begin
         @test nps([NPS.detractor, NPS.promoter]) == 0.0
     end
 end
