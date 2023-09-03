@@ -1,4 +1,4 @@
-module NPS
+module NetPromoterScore
 
 export nps
 

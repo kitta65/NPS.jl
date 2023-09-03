@@ -1,14 +1,14 @@
-using NPS
+using NetPromoterScore
 using Test
 
 @testset "all" begin
     @testset "Integer" begin
-        @test nps(0) == NPS.detractor
-        @test nps(6) == NPS.detractor
-        @test nps(7) == NPS.passive
-        @test nps(8) == NPS.passive
-        @test nps(9) == NPS.promoter
-        @test nps(10) == NPS.promoter
+        @test nps(0) == NetPromoterScore.detractor
+        @test nps(6) == NetPromoterScore.detractor
+        @test nps(7) == NetPromoterScore.passive
+        @test nps(8) == NetPromoterScore.passive
+        @test nps(9) == NetPromoterScore.promoter
+        @test nps(10) == NetPromoterScore.promoter
         @test_throws DomainError nps(-1)
     end
 
@@ -18,6 +18,6 @@ using Test
     end
 
     @testset "AbstractArray{NPSCategory}" begin
-        @test nps([NPS.detractor, NPS.promoter]) == 0.0
+        @test nps([NetPromoterScore.detractor, NetPromoterScore.promoter]) == 0.0
     end
 end

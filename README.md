@@ -1,20 +1,20 @@
-# NPS.jl
+# NetPromoterScore.jl
 
-NPS.jl is a simple package to calculate [NPS](https://en.wikipedia.org/wiki/Net_promoter_score) (Net Promoter Score).
+NetPromoterScore.jl is a simple package to calculate [NPS](https://en.wikipedia.org/wiki/Net_promoter_score).
 
 
 ## Install
 
 ```sh
-julia -e 'using Pkg; Pkg.add("NPS")'
+julia -e 'using Pkg; Pkg.add("NetPromoterScore")'
 ```
 
 ## Example
 
 ```julia
-using NPS
+using NetPromoterScore
 
-nps(0) # NPS.detractor
+nps(0) # NetPromoterScore.detractor
 nps([0, 7, 9]) # 0.0
-nps([NPS.passive, NPS.promoter]) # 50.0
+nps([NetPromoterScore.passive, NetPromoterScore.promoter]) # 50.0
 ```

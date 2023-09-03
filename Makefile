@@ -8,4 +8,4 @@ fmt: setup
 
 .PHONY: test
 test:
-	julia -e 'using Pkg; Pkg.activate("."); Pkg.test("NPS")'
+	julia -e 'using Pkg; Pkg.activate("."); Pkg.test("NetPromoterScore")'
