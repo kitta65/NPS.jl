@@ -17,4 +17,25 @@ function nps(x::Integer)::Category
     return throw(err)
 end
 
+function nps(arr::AbstractArray{T})::Float64 where {T<:Integer}
+    n_promoter = 0
+    n_passive = 0
+    n_detractor = 0
+
+    for x in arr
+        category = nps(x)
+
+        if category == promoter
+            n_promoter += 1
+        elseif category == passive
+            n_passive += 1
+        else
+            n_detractor += 1
+        end
+    end
+
+    sample_size = n_promoter + n_passive + n_detractor
+    return (n_promoter - n_detractor) / sample_size * 100
+end
+
 end
